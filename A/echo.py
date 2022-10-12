@@ -1,2 +1,3 @@
-a = input()
-print(a)
+while(1):
+ a = input()
+ print(a)
