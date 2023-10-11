@@ -1,0 +1,17 @@
+import tensorflow as tf
+
+# 모델 정의
+model = tf.keras.Sequential([
+    tf.keras.layers.Input(shape=(2,)),  # 두 개의 입력 값
+    tf.keras.layers.Add()  # 두 입력을 더하여 출력
+])
+
+# 모델 컴파일
+model.compile(optimizer='sgd', loss='mean_squared_error')
+
+# 모델 저장 (TFLite 형식으로)
+tflite_model = tf.lite.TFLiteConverter.from_keras_model(model)
+tflite_model = tflite_model.convert()
+
+with open('simple_model.tflite', 'wb') as f:
+    f.write(tflite_model)
