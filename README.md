@@ -23,6 +23,7 @@ set(CMAKE_C_FLAGS "-O3 --gcc-toolchain=${toolchain}")
 set(CMAKE_CXX_FLAGS "-O3 --gcc-toolchain=${toolchain}")
 set(CMAKE_ASM_FLAGS "-target aarch64-linux-gnu --gcc-toolchain=${toolchain}")
 
+//overwrite O3 default flag
 set(CMAKE_C_FLAGS_RELEASE "-DNDEBUG")
 set(CMAKE_CXX_FLAGS_RELEASE "-DNDEBUG")
 set(CMAKE_ASM_FLAGS_RELEASE "-DNDEBUG")
